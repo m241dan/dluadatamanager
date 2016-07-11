@@ -1,4 +1,4 @@
-require( "datamanager" )
+DataManager = require( "datamanager" )
 
 local function itp( dm, data )
    while true do
