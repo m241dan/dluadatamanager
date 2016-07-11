@@ -10,6 +10,7 @@
 -- interact with the event queue.                                        --
 ---------------------------------------------------------------------------
 
+require( "modules/dluautils/luautils" )
 
 local DM = {}
 

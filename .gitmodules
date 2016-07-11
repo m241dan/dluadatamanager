@@ -1,0 +1,3 @@
+[submodule "modules/dluautils"]
+	path = modules/dluautils
+	url = https://github.com/m241dan/dluautils
