@@ -11,7 +11,7 @@
 ---------------------------------------------------------------------------
 
 require( "luautils" )
-DRoutine = require( "droutine" )
+local DRoutine = require( "droutine" )
 
 local DM = {}
 
