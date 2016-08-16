@@ -10,8 +10,8 @@
 -- interact with the event queue.                                        --
 ---------------------------------------------------------------------------
 
-require( "modules/dluautils/luautils" )
-DRoutine = require( "modules/droutine/droutine" )
+require( "luautils" )
+DRoutine = require( "droutine" )
 
 local DM = {}
 
