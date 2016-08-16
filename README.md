@@ -1,5 +1,6 @@
 # dluadatamanager
 A datamanaging library specifically designed for managing data over sockets. Meant for Lua 5.3
+
 Written by Daniel R. Koris
 
 
