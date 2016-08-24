@@ -4,7 +4,7 @@
 -- best.                                                      --
 ----------------------------------------------------------------
 local LFS = require( "lfs" )
-require( "luautils" )
+local Luatils = require( "luautils" )
 
 local D = {}
 
@@ -25,7 +25,7 @@ end;
 
 function D:save()
    local f = io.open( self.save_loc .. self.save_name .. ".lua", "w" )
-   utils.save( self, f )
+   Luatils.save( self, f )
    f:close()
 end;
 
@@ -71,7 +71,7 @@ function D:setSaveLoc( path )
 end;
 
 function D:setInterp( path )
-   if( not utils.fileExists( path ) ) then
+   if( not Luatils.fileExists( path ) ) then
       print( "File " .. path .. " does not exist, cannot set the new interp." )
       return   
    end
