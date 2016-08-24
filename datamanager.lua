@@ -165,18 +165,20 @@ end
 
 -- a little helper function to setup interpreters, will try to use an interpreter path in the data or you can pass it one
 function DM:setupInterp( data, i_path )
-   local interp, target
+   local interp
    if( not i_path ) then
-      if( not data.interpreter ) then
+      if( data.interp_path == "none" ) then
          print( "DM:setupInterp failed because there was no interpreter passed and the data has no interpreter path accompanying it." )
          return false
       end
-      target = data.interpreter
-   else
-      target = i_path
+      i_path = data.interp_path
    end
-   interp = DRoutine:new()
-   interp:wrap( target )
+   interp = DRoutine:new( i_path )
+   if( not interp.thread ) then
+      print( "DM:setupInterp failed because there was no thread on the DRoutine" )
+      return false
+   end
+   -- first run to init the coroutine, interps should be coroutines
    interp( self, data )
    self.interpreter[data] = interp
    return true
