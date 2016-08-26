@@ -25,6 +25,12 @@ end;
 
 function D:save()
    local f = io.open( self.save_loc .. self.save_name .. ".lua", "w" )
+   -- sanity check
+   if( not f ) then
+      print( self.type .. ": could not execute save function." )
+      return
+   end
+
    Luatils.save( self, f )
    f:close()
 end;
