@@ -35,7 +35,7 @@ function D:save()
    f:close()
 end;
 
-function D:load( path )
+function D.load( path )
    local d = dofile( path )
 
    if( not d ) then
@@ -56,7 +56,7 @@ function D:serialize()
       return "COULD_NOT_FIND"
    end
 
-   return lib_name .. ":load( \"" .. self.save_loc .. self.save_name .. ".lua\" )"
+   return lib_name .. ".load( \"" .. self.save_loc .. self.save_name .. ".lua\" )"
 
 end;
 
