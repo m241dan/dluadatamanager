@@ -57,7 +57,14 @@ end
 
 --cleanup method(technically we let the garbage collector do the deleting)
 function DM:delete()
-   DM.all[table.getKey( DM.all, self )] = nil	-- removing itself from the masterlist should trigger garbage collection
+   local index
+   for i, dm in ipairs( DM.all ) do
+      if( dm == self )
+         index = i
+         break
+      end
+   end
+   table.remove( DM.all, i )
    -- may be more added under this later... not sure yet
 end
 
