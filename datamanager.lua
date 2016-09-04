@@ -105,7 +105,7 @@ function DM:remData( data )
    local CD = self.data[self.index] 		-- track current data(for later)
    -- remove the data and its interpreter
    self.data[DI] = nil
-   self.interpreter[self] = nil
+   self.interpreter[data] = nil
    DM.by_data[data] = nil
    -- clear out the "history"
    for k, v in ipairs( self.prev ) do
