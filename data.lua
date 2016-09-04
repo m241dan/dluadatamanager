@@ -26,8 +26,12 @@ end;
 
 function D:new()
    local d = D:raw()
-   D.all[#D.all+1] = d
+   D.all[d] = d
    return d
+end;
+
+function D:delete()
+   self.all[self] = nil
 end;
 
 function D:save()
