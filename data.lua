@@ -31,7 +31,7 @@ function D:new()
 end;
 
 function D:delete()
-   self.all[self] = nil
+   D.all[self] = nil
 end;
 
 function D:save()
