@@ -8,19 +8,26 @@ local Luatils = require( "luautils" )
 
 local D = {}
 
+D.all = {}
 D.__index = D -- for OOP mimicing
 D.type = "basic"
 D.interp_path = "none"
 D.save_loc = "./"
 D.save_name = "default"
 
-function D:new()
+function D:raw()
    -- OOP stuff
    local d = {}
    setmetatable( d, self )
 
    return d
    
+end;
+
+function D:new()
+   local d = D:raw()
+   D.all[#D.all+1] = d
+   return d
 end;
 
 function D:save()
