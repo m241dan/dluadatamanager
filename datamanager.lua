@@ -64,7 +64,8 @@ function DM:delete()
          break
       end
    end
-   table.remove( DM.all, i )
+   if( not index ) then return; end
+   table.remove( DM.all, index )
 
    -- remove itself from socket lists
    for i, dm in pairs( DM.by_socket ) do
