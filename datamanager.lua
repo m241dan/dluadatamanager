@@ -103,8 +103,9 @@ end
 function DM:remData( data )
    local DI = table.getKey( self.data, data ) 	-- get the data's current index
    local CD = self.data[self.index] 		-- track current data(for later)
-   -- remove the data
+   -- remove the data and its interpreter
    self.data[DI] = nil
+   self.interpreter[self] = nil
    DM.by_data[data] = nil
    -- clear out the "history"
    for k, v in ipairs( self.prev ) do
