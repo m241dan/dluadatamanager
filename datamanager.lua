@@ -65,7 +65,20 @@ function DM:delete()
       end
    end
    table.remove( DM.all, i )
-   -- may be more added under this later... not sure yet
+
+   -- remove itself from socket lists
+   for i, dm in pairs( DM.by_socket ) do
+      if( dm == self ) then
+         DM.by_socket[i] = nil
+      end
+   end
+   -- remove itself from data lists
+   for i, dm in pairs( DM.by_data ) do
+      if( dm == self ) then
+         DM.by_data[i] = nil
+      end
+   end
+   self = nil
 end
 
 -------------------------
