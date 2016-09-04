@@ -59,7 +59,7 @@ end
 function DM:delete()
    local index
    for i, dm in ipairs( DM.all ) do
-      if( dm == self )
+      if( dm == self ) then
          index = i
          break
       end
